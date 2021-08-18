@@ -12,7 +12,7 @@ There are two types of benign traffic scenarios.
   8-client scenario, eight web clients download files from two web servers back to back, but at a slower rate owing to contention. This is a python program   
   communicating with two webservers with ports 5050 and 5060.
 Attack traffic is collect using _hping3_ for SYN floods and _slowhttptest_ tool for Slow Read attacks.  
-The traffic is collected as pcap files at the incoming interface of the switch from the client and attacker as the benign and attack traffic interfere at the switch. The experiments were run for 90 mins for each attack case running client(s) and attack simultaneously. 
+The traffic is collected as pcap files at the incoming interface of the switch from the client and attacker as the benign and attack traffic interfere at the switch. The experiments were run for 90 mins for each attack case running client(s) and attack simultaneously. However, benign only without any attack is collected with the experiments run for 150mins and 30 mins respectively with 8-client scenario.
 
 An experimental testbed used to collect the benign and attack traffic consists of four Linux machines. One machine runs vSwitch as OpenFlow switch and Pox
 controller as OpenFlow controller to create an SDN environment. The southbound interface is a TCP channel with 1Gbps bandwidth and OpenFlow (OF) protocol v1.0 used for communication between switch and the controller. Two client machines, one is used as a benign client and the other as an attacker, and one as web server are connected to the OF switch.
